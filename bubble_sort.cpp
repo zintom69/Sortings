@@ -1,12 +1,5 @@
 #include "bubble_sort.h"
-
-using namespace std;
-
-void swap(int &x, int &y) {
-    int t = x;
-    x = y;
-    y = t;
-}
+#include "utils.h"
 
 void bubbleSort(int a[], int n)
 {
