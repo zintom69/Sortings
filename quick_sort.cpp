@@ -1,9 +1,4 @@
-#include <chrono>
-#include <iostream>
-
-#include "sortings.h"
-
-using namespace std;
+#include "quick_sort.h"
 
 void swap(int &x, int &y) {
     int t = x;
@@ -39,14 +34,6 @@ int quickSort(int a[], int l, int r) {
     return comparisions;
 }
 
-int quickSort(int a[], int n) {
+int quickSortComparisions(int a[], int n) {
     return quickSort(a, 0, n - 1);
-}
-
-RunInfo benchmark(int a[], int n, int (*sort)(int a[], int n)) {
-    auto start = chrono::steady_clock::now();
-    int comparisions = sort(a, n);
-    auto end = chrono::steady_clock::now();
-    long long elapsed_time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
-    return RunInfo {elapsed_time, comparisions};
 }
