@@ -1,5 +1,10 @@
 #include "quick_sort.h"
-#include "utils.h"
+
+void swap(int &x, int &y) {
+    int t = x;
+    x = y;
+    y = t;
+}
 
 int partition(int a[], int l, int r, int &comparisions) {
     int pivot = a[(l+r)/2];
